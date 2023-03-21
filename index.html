@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const model = {
+        // app-ting
+        app: {
+            currentPage: 'login',
+        },
+        
+        // inputs til hver side (Når du refresher siden- hva var huket av/skrevet inn?)
+        inputs: {
+            loginPage:{
+                username: '',
+                password: ''
+            },
+            emailPage: {
+                chooseAll: false,
+                emailInput: '',
+                emailList: [{ email: 'eksempel@gmail.com', checked: false},
+                            { email: 'eksempel2@gmail.com', checked: false}]
+            },
+            FillOutQuestionPage: {
+                questions: [
+                {
+                    options: ['option1','option2'], // de valgene som er huket av
+                    freeTxtAnswer: []
+                },
+                {     
+                    options: ['option1','option2'],
+                    freeTxtAnswer: []
+                }]
+            }
+        },
+                
+        // felles data
+        questionnaires: [{id: 1, topic: 'julebord', ongoing: true}, 
+                         {id:2, topic: 'lønningspils', ongoing: false}],
+
+        questions: [
+                    {
+                        questionnaire: 2,                        
+                        title: 'Når tar vi lønningspils?',
+                        questionType: 1,
+                        answers: [{
+                            text: 'Svar 1',
+                            isChecked: true
+                        },
+                        {
+                            text: 'Svar 2',
+                            isChecked: false
+                        }]
+                    },
+                    {
+                        questionnaire: 1,                        
+                        title: 'Julebord hvor skal vi ha det?',
+                        questionType: 1,
+                        answers: [{
+                            text: 'Svar 1',
+                            isChecked: true
+                        },
+                        {
+                            text: 'Svar 2',
+                            isChecked: false
+                        }]
+                    },
+                    {
+                        questionnaire: 1,
+                        title: 'Julebord når skal vi ha det?',
+                        questionType: 1,
+                        answers: [{
+                            text: 'Svar 1',
+                            isChecked: true
+                        },
+                        {
+                            text: 'Svar 2',
+                            isChecked: false
+                        }]
+                    }
+                ],
+
+        questionType : [{id: 1, type: 'multiple choice'},
+                        {id: 2, type: 'free text'}]
+       
+    };
+
+    </script>
+</body>
+</html>
